@@ -1,0 +1,31 @@
+# Tools
+export EDITOR='nvim'
+export IDE='code'
+
+# # system
+alias aptup='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
+
+# git
+alias lg=lazygit
+alias gs='git status'
+alias gp='git pull'
+alias gP='git push'
+
+# ls aliases
+if [ $(which exa) >&/dev/null ] ; then;
+    alias l='exa --icons --group-directories-first'
+else;
+    alias l='ls -hg --group-directories-first'
+fi
+alias ll='l -l'
+alias la='l -la'
+
+# shell config
+alias zshup='source ~/.zshrc'
+alias zshconf="$EDITOR ~/.zshrc && zshup"
+
+# redirect programs
+alias cat=batcat
+alias vim=nvim
+alias fd=fdfind
+# fzf
