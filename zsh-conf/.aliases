@@ -27,5 +27,7 @@ alias zshconf="$EDITOR ~/.zshrc && zshup"
 # redirect programs
 alias cat=batcat
 alias vim=nvim
-alias fd=fdfind
-# fzf
+alias fd=fzf
+alias nord=nordvpn
+
+alias ducup="noip-duc -g all.ddnskey.com --username mnard5v --password 9XLAEj4MFGaD"

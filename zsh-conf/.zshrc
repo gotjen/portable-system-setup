@@ -40,22 +40,23 @@ setopt appendhistory
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Add wisely, as too  many plugins slow down shell startup.
 
-plugins=(git fzf docker aws zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-
-# source custom functions
-fpath=(~/.zsh/functions $fpath)
-autoload -Uz ~/.zsh/functions/*
-
 
 # User configuration
 
 if [[ -f ~/.aliases ]]; then
 	source ~/.aliases
 fi
+
+export WORKON_HOME=$HOME/.venvs
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+export VIRTUALENVWRAPPER_VIRTUALENV=$(which virtualenv)
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+workon base
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
